@@ -134,4 +134,3 @@ def print_in_box_wrap(message)
 end
 
 print_in_box_wrap('This is the last step in PEDAC — the “C”, which stands for “code with intent”. This stage is all about implementing the solution in your language of choice. The major benefit of investing time in the previous steps (the PEDA) is that it reduces the implementation to a simple translation of the algorithm into programming language syntax.')
-
