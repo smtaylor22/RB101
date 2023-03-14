@@ -3,12 +3,17 @@
 # perform calculation
 # output the result
 
+require 'yaml'
+
+MESSAGES = YAML.load_file('calculator_messages.yml')
+puts MESSAGES.inspect
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
 def valid_number?(num)
-  num.to_i() != 0
+  num.match?(/[[:digit:]]/)
 end
 
 def operation_to_message(op)
@@ -23,6 +28,9 @@ def operation_to_message(op)
     'Dividing'
   end
 end
+
+ok = 'hello'
+puts ok.to_f
 
 prompt("Welcome to Calculator! Enter your name: ")
 
@@ -41,7 +49,7 @@ loop do # main
   number1 = ''
   loop do
     prompt("What's the first number?")
-    number1 = Kernel.gets().chomp().to_i()
+    number1 = Kernel.gets().chomp()
 
     if valid_number?(number1)
       break
@@ -53,7 +61,7 @@ loop do # main
   number2 = ''
   loop do
     prompt("What's the second number?")
-    number2 = Kernel.gets().chomp().to_i()
+    number2 = Kernel.gets().chomp()
 
     if valid_number?(number2)
       break
@@ -87,11 +95,11 @@ loop do # main
 
   result = case operator
            when '1'
-             number1 + number2
+             number1.to_i() + number2.to_i()
            when '2'
-             number1 - number2
+             number1.to_i() - number2.to_i()
            when '3'
-             number1 * number2
+             number1.to_i() * number2.to_i()
            when '4'
              number1.to_f() / number2.to_f()
            end
