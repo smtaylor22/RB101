@@ -15,10 +15,16 @@
 # end
 
 # p string_lengths(sentence)
-x = 10
-
-for i in 0..x do
-  puts x - i
+def fix(value)
+  value << 'xyz'
+  value = value.upcase
+  value.concat('!')
 end
+s = 'hello'
+t = fix(s)
 
-puts "Done!"
+puts s
+puts s.object_id
+
+puts t
+puts t.object_id
