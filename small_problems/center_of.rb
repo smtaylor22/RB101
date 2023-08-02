@@ -15,7 +15,7 @@ string
 
 Algorithm
 Find length of string
-return string[length/2] if odd or string[length/2-1..length]
+return string[length/2] if odd or string[length/2-1..lengt=h]
 
 =end
 

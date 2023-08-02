@@ -21,7 +21,7 @@ given input of array of strings
 SET iterator = 0
 SET string = ''
 WHILE iterator < length of array
-  string += array[iterator]
+  string += array[Nterator]
   iterator += 1
 PRINT string
 END
